@@ -1,8 +1,10 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
+import { shallow } from 'enzyme'
 import TestComponent from './TestComponent'
 
-it('renders without crashing', () => {
-  const div = document.createElement('div')
-  ReactDOM.render(<TestComponent/>, div)
+describe('<TestComponent/>', () => {
+  it('renders the test component', () => {
+    const tester = shallow(<TestComponent/>)
+    expect(tester.find('h1').length).toEqual(1)
+  })
 })
