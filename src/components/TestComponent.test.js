@@ -14,5 +14,10 @@ describe('<TestComponent/>', () => {
     expect(sentence.find('h2').text()).toEqual('i am a lazy dog and i like to jump')
   })
 
+  it('adds a box on click', () => {
+    const container = shallow(<TestComponent/>)
+    container.find('button').simulate('click')
+    expect(container.find('div.box').length).toEqual(1)
+  })
 })
 
