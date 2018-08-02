@@ -2,7 +2,7 @@ import React from 'react'
 import { shallow } from 'enzyme'
 import TestComponent from './TestComponent'
 
-describe('<TestComponent/>', () => {
+describe('everything in the DOM is working properly', () => {
   it('renders a single h1 element', () => {
     const tester = shallow(<TestComponent />)
     expect(tester.find('h1').length).toEqual(1)
@@ -22,4 +22,13 @@ describe('<TestComponent/>', () => {
       expect(container.find('div.box').length).toEqual(i+1)
     }
   })
+  
+  it('adds another box on click', () => {
+    const container = shallow(<TestComponent />)
+    for (let i = 0; i < 10; i++) {
+      container.find('p').simulate('click')
+      expect(container.find('div.box').length).toEqual(i+1)
+    }
+  })
+
 })
