@@ -4,8 +4,6 @@ import './TestComponent.css'
 class TestComponent extends React.Component {
   state = {
     numBoxes: 0,
-    primeAnswer: '',
-    primeNum: ''
   }
 
   changeHandler = e => {

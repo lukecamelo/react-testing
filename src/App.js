@@ -7,11 +7,10 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Hello world!</h1>
-        <TestComponent/>
+        <TestComponent />
       </div>
     )
   }
 }
 
 export default App
- 
